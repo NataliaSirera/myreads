@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ListBooks = () => {
   return (
     <div className="app">
@@ -247,7 +249,7 @@ const ListBooks = () => {
           </div>
         </div>
         <div className="open-search">
-          <a>Add a book</a>
+          <Link to="/search">Add a book</Link>
         </div>
       </div>
     </div>
