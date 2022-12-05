@@ -3,17 +3,26 @@ import { Link } from "react-router-dom";
 import Book from "./Book";
 import * as BooksAPI from "./BooksAPI";
 
-const SearchBooks = ({ changeShelf }) => {
+const SearchBooks = ({ books, changeShelf }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
   const getResults = async (query) => {
     const res = await BooksAPI.search(query);
+    res.map((r) => {
+      books.map((book) => {
+        if (book.id === r.id) {
+          r.shelf = book.shelf;
+        }
+      });
+      if (!r.shelf) {
+        r.shelf = "none";
+      }
+    });
     setResults(res);
   };
 
   const updateQuery = (query) => {
-    query = query.trim();
     setQuery(query);
     if (query.length > 0) {
       getResults(query);

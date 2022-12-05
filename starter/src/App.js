@@ -50,7 +50,7 @@ function App() {
       />
       <Route
         path="/search"
-        element={<SearchBooks changeShelf={changeShelf} />}
+        element={<SearchBooks changeShelf={changeShelf} books={books} />}
       />
     </Routes>
   );
