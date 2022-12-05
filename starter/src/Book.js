@@ -1,6 +1,6 @@
 import BookChanger from "./BookChanger";
 
-const Book = ({ book }) => {
+const Book = ({ book, changeShelf }) => {
   return (
     <li>
       <div className="book">
@@ -13,7 +13,11 @@ const Book = ({ book }) => {
               backgroundImage: `url(${book.imageLinks.thumbnail}`,
             }}
           ></div>
-          <BookChanger shelf={book.shelf} />
+          <BookChanger
+            shelf={book.shelf}
+            book={book}
+            changeShelf={changeShelf}
+          />
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{book.authors} </div>

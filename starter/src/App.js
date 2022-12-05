@@ -22,12 +22,31 @@ function App() {
     getBooks();
   }, []);
 
+  const changeShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf);
+
+    const keptBooks = books.filter((b) => b.id !== book.id);
+    book.shelf = shelf;
+
+    if (shelf === "none") {
+      setBooks(keptBooks);
+    } else {
+      setBooks([...keptBooks, book]);
+    }
+  };
+
   return (
     <Routes>
       <Route
         exact
         path="/"
-        element={<ListBooks books={books} shelves={shelves} />}
+        element={
+          <ListBooks
+            books={books}
+            shelves={shelves}
+            changeShelf={changeShelf}
+          />
+        }
       />
       <Route path="/search" element={<SearchBooks />} />
     </Routes>
