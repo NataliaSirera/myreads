@@ -48,7 +48,10 @@ function App() {
           />
         }
       />
-      <Route path="/search" element={<SearchBooks />} />
+      <Route
+        path="/search"
+        element={<SearchBooks changeShelf={changeShelf} />}
+      />
     </Routes>
   );
 }
