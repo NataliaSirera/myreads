@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const BookChanger = ({ book, shelf, changeShelf }) => {
   const handleChange = (event) => {
     changeShelf(book, event.target.value);
@@ -14,6 +16,12 @@ const BookChanger = ({ book, shelf, changeShelf }) => {
       </select>
     </div>
   );
+};
+
+BookChanger.propTypes = {
+  book: PropTypes.object.isRequired,
+  shelf: PropTypes.string.isRequired,
+  changeShelf: PropTypes.func.isRequired,
 };
 
 export default BookChanger;
