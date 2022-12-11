@@ -1,8 +1,10 @@
 # MyReads: A Book Tracking App
 
-MyReads is a web app created using React.js as a part of the Udacity's React Nanodegree program.
+MyReads is a web app created using React.js as a part of the [Udacity's React Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-It represents a bookcase to store books and tracks what you're reading. It has three shelves:
+## About
+
+MyReads represents a bookcase to store books and tracks what you're reading. It has three shelves:
 
 - Currently Reading
 - Want to Read
@@ -10,10 +12,8 @@ It represents a bookcase to store books and tracks what you're reading. It has t
 
 Additionally you can search and add books to any shelf.
 
-
-## Installation
+## Getting Started
 
 - Run `npm install` in the project directory to install all the dependencies.
 - Run `npm start` in the project directory to launch the website
-- The website can be viewed in the browser at http://localhost:3000
-
+- View the website at [http://localhost:3000](http://localhost:3000)
